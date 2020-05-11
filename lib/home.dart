@@ -44,6 +44,7 @@ NavigationRailLabelType getLabelType(LabelType labelType) {
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
   GroupStatus groupStatus;
+  LabelType labelType;
   bool leadingSwitchValue = false;
   bool trailingSwitchValue = false;
 
@@ -68,7 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 _selectedIndex = index;
               });
             },
-            labelType: NavigationRailLabelType.selected,
+            labelType: getLabelType(labelType),
             destinations: [
               NavigationRailDestination(
                 icon: Icon(Icons.favorite_border),
@@ -203,6 +204,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void handleRadioValueChanged(int value) {
     setState(() {
+      labelType = LabelType.values[value];
       radioValue = value;
     });
   }
