@@ -23,7 +23,7 @@ double getGroupValue(GroupStatus groupStatus) {
   }
 }
 
-enum LabelType { none, selected, all }
+enum LabelType { selected, none, all }
 
 NavigationRailLabelType getLabelType(LabelType labelType) {
   switch (labelType) {
@@ -51,7 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
   int indexSelected = 0;
   int radioValue = 0;
 
-  List<String> radioLabels = ['Selected', 'None', 'All'];
+  List<String> radioLabels = [ 'Selected','None','All'];
 
   @override
   Widget build(BuildContext context) {
