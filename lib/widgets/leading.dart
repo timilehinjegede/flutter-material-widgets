@@ -1,16 +1,27 @@
 import 'package:flutter/material.dart';
 
-Widget buildLeading() {
-  return Column(
-    children: <Widget>[
-      CircleAvatar(
-        radius: 25,
-        backgroundColor: Colors.blue,
-      ),
-      RotatedBox(
-        quarterTurns: -1,
-        child: Text('Leading'),
-      ),
-    ],
-  );
+class LeadingWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        FlutterLogo(
+          size: 60,
+        ),
+        SizedBox(
+          height: 20,
+        ),
+        RotatedBox(
+          quarterTurns: -1,
+          child: Text(
+            'Flutter',
+            style: TextStyle(
+              fontWeight: FontWeight.w500,
+              fontSize: 18,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
 }
