@@ -26,59 +26,65 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       body: Row(
         children: <Widget>[
-          NavigationRail(
-            leading: leadingSwitchValue ? buildLeading() : SizedBox.shrink(),
-            trailing: trailingSwitchValue ? buildTrailing() : SizedBox.shrink(),
-            groupAlignment: getGroupValue(groupStatus),
-            selectedIndex: _selectedIndex,
-            onDestinationSelected: (int index) {
-              setState(() {
-                _selectedIndex = index;
-              });
-            },
-            labelType: getLabelType(labelType),
-            destinations: [
-              NavigationRailDestination(
-                icon: Icon(
-                  Icons.favorite_border,
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              vertical: 25.0,
+            ),
+            child: NavigationRail(
+              leading: leadingSwitchValue ? buildLeading() : SizedBox.shrink(),
+              trailing:
+                  trailingSwitchValue ? buildTrailing() : SizedBox.shrink(),
+              groupAlignment: getGroupValue(groupStatus),
+              selectedIndex: _selectedIndex,
+              onDestinationSelected: (int index) {
+                setState(() {
+                  _selectedIndex = index;
+                });
+              },
+              labelType: getLabelType(labelType),
+              destinations: [
+                NavigationRailDestination(
+                  icon: Icon(
+                    Icons.favorite_border,
+                  ),
+                  selectedIcon: Icon(
+                    Icons.favorite,
+                  ),
+                  label: Text(
+                    'First',
+                  ),
                 ),
-                selectedIcon: Icon(
-                  Icons.favorite,
+                NavigationRailDestination(
+                  icon: Icon(
+                    Icons.bookmark_border,
+                  ),
+                  selectedIcon: Icon(
+                    Icons.book,
+                  ),
+                  label: Text(
+                    'Second',
+                  ),
                 ),
-                label: Text(
-                  'First',
+                NavigationRailDestination(
+                  icon: Icon(
+                    Icons.star_border,
+                  ),
+                  selectedIcon: Icon(
+                    Icons.star,
+                  ),
+                  label: Text('Third'),
                 ),
-              ),
-              NavigationRailDestination(
-                icon: Icon(
-                  Icons.bookmark_border,
+                NavigationRailDestination(
+                  icon: Icon(
+                    Icons.location_on,
+                  ),
+                  selectedIcon: Icon(
+                    Icons.edit_location,
+                  ),
+                  label: Text('Forth'),
                 ),
-                selectedIcon: Icon(
-                  Icons.book,
-                ),
-                label: Text(
-                  'Second',
-                ),
-              ),
-              NavigationRailDestination(
-                icon: Icon(
-                  Icons.star_border,
-                ),
-                selectedIcon: Icon(
-                  Icons.star,
-                ),
-                label: Text('Third'),
-              ),
-              NavigationRailDestination(
-                icon: Icon(
-                  Icons.location_on,
-                ),
-                selectedIcon: Icon(
-                  Icons.edit_location,
-                ),
-                label: Text('Forth'),
-              ),
-            ],
+              ],
+            ),
           ),
           VerticalDivider(thickness: 1, width: 1),
           _buildBody(),
