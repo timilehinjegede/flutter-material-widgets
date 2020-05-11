@@ -7,51 +7,51 @@ A Flutter project that gives a visual representation of how the new NavigationRa
 
 ### The screenshots below are taken on a iOS simulator.
 
-| Form with empty fields                                           | Clicking the login button with empty fields                                         |
+|  ScreenShot 1                                         |  ScreenShot 2                                          |
 | ------------------------------------------- | ----------------------------------------- |
 | <img src="screenshots/0.png" width="400"> | <img src="screenshots/1.png" width="400"> |
 
 
-|  Filling part of the form fields                                           | Filling part of the form fields                                         |
+|   ScreenShot 3                                           |  ScreenShot 4                                         |
 | ------------------------------------------- | ----------------------------------------- |
 | <img src="screenshots/2.png" width="400"> | <img src="screenshots/3.png" width="400"> |
 
 
-| Form with empty fields                                           | Clicking the login button with empty fields                                         |
+|  ScreenShot 5                                          | ScreenShot 6                                          |
 | ------------------------------------------- | ----------------------------------------- |
 | <img src="screenshots/4.png" width="400"> | <img src="screenshots/5.png" width="400"> |
 
 
-|  Filling part of the form fields                                           | Filling part of the form fields                                         |
+|  ScreenShot 7                                            | ScreenShot 8                                       |
 | ------------------------------------------- | ----------------------------------------- |
 | <img src="screenshots/6.png" width="400"> | <img src="screenshots/7.png" width="400"> |
 
 
-| Form with empty fields                                           | Clicking the login button with empty fields                                         |
+| ScreenShot 9                                         | ScreenShot 10                                       |
 | ------------------------------------------- | ----------------------------------------- |
 | <img src="screenshots/8.png" width="400"> | <img src="screenshots/9.png" width="400"> |
 
 
-|  Filling part of the form fields                                           | Filling part of the form fields                                         |
+|  ScreenShot 11                                          | ScreenShot 12                                           |
 | ------------------------------------------- | ----------------------------------------- |
 | <img src="screenshots/10.png" width="400"> | <img src="screenshots/11.png" width="400"> |
 
-| Form with empty fields                                           | Clicking the login button with empty fields                                         |
+| ScreenShot 13                                           | ScreenShot 14                                          |
 | ------------------------------------------- | ----------------------------------------- |
 | <img src="screenshots/12.png" width="400"> | <img src="screenshots/13.png" width="400"> |
 
 
-|  Filling part of the form fields                                           | Filling part of the form fields                                         |
+|  ScreenShot 15                                           | ScreenShot 16                                          |
 | ------------------------------------------- | ----------------------------------------- |
 | <img src="screenshots/14.png" width="400"> | <img src="screenshots/15.png" width="400"> |
 
 
-| Form with empty fields                                           | Clicking the login button with empty fields                                         |
+| ScreenShot 17                                          | ScreenShot 18                                         |
 | ------------------------------------------- | ----------------------------------------- |
 | <img src="screenshots/16.png" width="400"> | <img src="screenshots/17.png" width="400"> |
 
 
-|  Filling part of the form fields           |        
+|  ScreenShot 19           |        
 | ------------------------------------------- |
 | <img src="screenshots/18.png" width="400"> | 
 
