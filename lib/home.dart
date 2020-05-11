@@ -9,11 +9,22 @@ class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
 
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+
+  bool leadingSwitchValue = false;
+  bool trailingSwitchValue = false;
+
+  int indexSelected = -1;
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Row(
         children: <Widget>[
           NavigationRail(
+            groupAlignment: -1.0,
             selectedIndex: _selectedIndex,
             onDestinationSelected: (int index) {
               setState(() {
@@ -28,9 +39,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 label: Text('First'),
               ),
               NavigationRailDestination(
-                icon: Icon(Icons.bookmark_border),
-                selectedIcon: Icon(Icons.book),
-                label: Text('Second'),
+                icon: SizedBox.shrink(),
+                label: RotatedBox(
+                  quarterTurns: -1,
+                  child: Text("text"),
+                ),
               ),
               NavigationRailDestination(
                 icon: Icon(Icons.star_border),
@@ -41,10 +54,30 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           VerticalDivider(thickness: 1, width: 1),
           Expanded(
-            child: Container(),
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Row(
+                    children: <Widget>[
+                      Text('Leading'),
+                      Switch(
+                        value: leadingSwitchValue,
+                        onChanged: (value) {
+                          setState(
+                            () {
+                              leadingSwitchValue = value;
+                            },
+                          );
+                        },
+                      ),
+                    ],
+                  ),
+
+                ]),
           ),
         ],
       ),
     );
   }
 }
+
