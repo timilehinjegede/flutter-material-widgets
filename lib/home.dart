@@ -72,7 +72,6 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ],
                   ),
-
                 ]),
           ),
         ],
@@ -81,3 +80,16 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
+Widget _buildTrailing() {
+  return Column(
+    children: <Widget>[],
+  );
+}
+
+Widget _buildLeading() {
+  return Column(
+    children: <Widget>[],
+  );
+}
+
+Widget _buildBody() {}
