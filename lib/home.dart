@@ -28,6 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Row(
         children: <Widget>[
           NavigationRail(
+            leading: leadingSwitchValue ? _buildLeading() : SizedBox.shrink(),
             groupAlignment: -1.0,
             selectedIndex: _selectedIndex,
             onDestinationSelected: (int index) {
