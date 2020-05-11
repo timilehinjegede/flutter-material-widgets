@@ -189,6 +189,15 @@ Widget _buildTrailing() {
 
 Widget _buildLeading() {
   return Column(
-    children: <Widget>[],
+    children: <Widget>[
+      CircleAvatar(
+        radius: 25,
+        backgroundColor: Colors.blue,
+      ),
+      RotatedBox(
+        quarterTurns: -1,
+        child: Text('Leading'),
+      ),
+    ],
   );
 }
