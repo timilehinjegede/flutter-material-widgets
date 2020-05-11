@@ -87,7 +87,45 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ],
                   ),
-
+                  Wrap(
+                    crossAxisAlignment: WrapCrossAlignment.center,
+                    children: <Widget>[
+                      Text('Group Alignment'),
+                      ChoiceChip(
+                        label: Text('-1.0'),
+                        selected: indexSelected == 0,
+                        onSelected: (value) {
+                          setState(() {
+                            indexSelected = value ? 0 : -1;
+                          });
+                        },
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      ChoiceChip(
+                        label: Text('0.0'),
+                        selected: indexSelected == 1,
+                        onSelected: (value) {
+                          setState(() {
+                            indexSelected = value ? 1 : -1;
+                          });
+                        },
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      ChoiceChip(
+                        label: Text('1.0'),
+                        selected: indexSelected == 2,
+                        onSelected: (value) {
+                          setState(() {
+                            indexSelected = value ? 2 : -1;
+                          });
+                        },
+                      ),
+                    ],
+                  )
                 ]),
           ),
         ],
