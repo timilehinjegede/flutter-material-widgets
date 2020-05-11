@@ -57,107 +57,112 @@ class _HomeScreenState extends State<HomeScreen> {
             ],
           ),
           VerticalDivider(thickness: 1, width: 1),
-          Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Row(
-                  children: <Widget>[
-                    Text('Leading'),
-                    Switch(
-                      value: leadingSwitchValue,
-                      onChanged: (value) {
-                        setState(
-                          () {
-                            leadingSwitchValue = value;
-                          },
-                        );
-                      },
-                    ),
-                  ],
-                ),
-                Row(
-                  children: <Widget>[
-                    Text('Trailing'),
-                    Switch(
-                      value: trailingSwitchValue,
-                      onChanged: (value) {
-                        setState(
-                          () {
-                            trailingSwitchValue = value;
-                          },
-                        );
-                      },
-                    ),
-                  ],
-                ),
-                Wrap(
-                  crossAxisAlignment: WrapCrossAlignment.center,
-                  children: <Widget>[
-                    Text('Group Alignment'),
-                    ChoiceChip(
-                      label: Text('-1.0'),
-                      selected: indexSelected == 0,
-                      onSelected: (value) {
-                        setState(
-                          () {
-                            indexSelected = value ? 0 : -1;
-                          },
-                        );
-                      },
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    ChoiceChip(
-                      label: Text('0.0'),
-                      selected: indexSelected == 1,
-                      onSelected: (value) {
-                        setState(
-                          () {
-                            indexSelected = value ? 1 : -1;
-                          },
-                        );
-                      },
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    ChoiceChip(
-                      label: Text('1.0'),
-                      selected: indexSelected == 2,
-                      onSelected: (value) {
-                        setState(
-                          () {
-                            indexSelected = value ? 2 : -1;
-                          },
-                        );
-                      },
-                    ),
-                  ],
-                ),
-                Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Text('Label Type'),
-                    for (int index = 0; index < 3; ++index)
-                      Row(
-                        children: <Widget>[
-                          Radio<int>(
-                            value: index,
-                            groupValue: radioValue,
-                            onChanged: handleRadioValueChanged,
-                          ),
-                          Text(radioLabels[index]),
-                        ],
-                      ),
-                  ],
-                )
-              ],
-            ),
+          _buildBody(),
+        ],
+      ),
+    );
+  }
+
+
+  Widget _buildBody() {
+    return  Expanded(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Row(
+            children: <Widget>[
+              Text('Leading'),
+              Switch(
+                value: leadingSwitchValue,
+                onChanged: (value) {
+                  setState(
+                        () {
+                      leadingSwitchValue = value;
+                    },
+                  );
+                },
+              ),
+            ],
           ),
+          Row(
+            children: <Widget>[
+              Text('Trailing'),
+              Switch(
+                value: trailingSwitchValue,
+                onChanged: (value) {
+                  setState(
+                        () {
+                      trailingSwitchValue = value;
+                    },
+                  );
+                },
+              ),
+            ],
+          ),
+          Wrap(
+            crossAxisAlignment: WrapCrossAlignment.center,
+            children: <Widget>[
+              Text('Group Alignment'),
+              ChoiceChip(
+                label: Text('-1.0'),
+                selected: indexSelected == 0,
+                onSelected: (value) {
+                  setState(
+                        () {
+                      indexSelected = value ? 0 : -1;
+                    },
+                  );
+                },
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              ChoiceChip(
+                label: Text('0.0'),
+                selected: indexSelected == 1,
+                onSelected: (value) {
+                  setState(
+                        () {
+                      indexSelected = value ? 1 : -1;
+                    },
+                  );
+                },
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              ChoiceChip(
+                label: Text('1.0'),
+                selected: indexSelected == 2,
+                onSelected: (value) {
+                  setState(
+                        () {
+                      indexSelected = value ? 2 : -1;
+                    },
+                  );
+                },
+              ),
+            ],
+          ),
+          Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Text('Label Type'),
+              for (int index = 0; index < 3; ++index)
+                Row(
+                  children: <Widget>[
+                    Radio<int>(
+                      value: index,
+                      groupValue: radioValue,
+                      onChanged: handleRadioValueChanged,
+                    ),
+                    Text(radioLabels[index]),
+                  ],
+                ),
+            ],
+          )
         ],
       ),
     );
@@ -182,4 +187,3 @@ Widget _buildLeading() {
   );
 }
 
-Widget _buildBody() {}
