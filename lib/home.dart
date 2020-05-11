@@ -1,26 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_material_widgets/enums/group_status.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
-}
-
-enum GroupStatus { negativeOne, zero, positiveOne }
-
-double getGroupValue(GroupStatus groupStatus) {
-  switch (groupStatus) {
-    case GroupStatus.negativeOne:
-      return -1.0;
-      break;
-    case GroupStatus.zero:
-      return 0.0;
-      break;
-    case GroupStatus.positiveOne:
-      return 1.0;
-      break;
-    default:
-      return -1;
-  }
 }
 
 enum LabelType { selected, none, all }
@@ -51,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
   int indexSelected = 0;
   int radioValue = 0;
 
-  List<String> radioLabels = [ 'Selected','None','All'];
+  List<String> radioLabels = ['Selected', 'None', 'All'];
 
   @override
   Widget build(BuildContext context) {
