@@ -11,7 +11,7 @@ class _HomeScreenState extends State<HomeScreen> {
   bool leadingSwitchValue = false;
   bool trailingSwitchValue = false;
 
-  int indexSelected = -1;
+  int indexSelected = 0;
   int radioValue = 0;
 
   List<String> radioLabels = ['Selected', 'None', 'All'];
@@ -23,7 +23,8 @@ class _HomeScreenState extends State<HomeScreen> {
         children: <Widget>[
           NavigationRail(
             leading: leadingSwitchValue ? _buildLeading() : SizedBox.shrink(),
-            trailing: trailingSwitchValue ? _buildTrailing() : SizedBox.shrink(),
+            trailing:
+                trailingSwitchValue ? _buildTrailing() : SizedBox.shrink(),
             groupAlignment: -1.0,
             selectedIndex: _selectedIndex,
             onDestinationSelected: (int index) {
@@ -103,7 +104,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 onSelected: (value) {
                   setState(
                     () {
-                      indexSelected = value ? 0 : -1;
+                      indexSelected = value ? 0 : 0;
                     },
                   );
                 },
@@ -117,7 +118,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 onSelected: (value) {
                   setState(
                     () {
-                      indexSelected = value ? 1 : -1;
+                      indexSelected = value ? 1 : 0;
                     },
                   );
                 },
@@ -131,7 +132,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 onSelected: (value) {
                   setState(
                     () {
-                      indexSelected = value ? 2 : -1;
+                      indexSelected = value ? 2 : 0;
                     },
                   );
                 },
