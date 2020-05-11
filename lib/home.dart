@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_material_widgets/enums/group_status.dart';
 import 'package:flutter_material_widgets/enums/label_type.dart';
+import 'package:flutter_material_widgets/widgets/leading.dart';
+import 'package:flutter_material_widgets/widgets/trailing.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -25,9 +27,8 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Row(
         children: <Widget>[
           NavigationRail(
-            leading: leadingSwitchValue ? _buildLeading() : SizedBox.shrink(),
-            trailing:
-                trailingSwitchValue ? _buildTrailing() : SizedBox.shrink(),
+            leading: leadingSwitchValue ? buildLeading() : SizedBox.shrink(),
+            trailing: trailingSwitchValue ? buildTrailing() : SizedBox.shrink(),
             groupAlignment: getGroupValue(groupStatus),
             selectedIndex: _selectedIndex,
             onDestinationSelected: (int index) {
@@ -174,34 +175,4 @@ class _HomeScreenState extends State<HomeScreen> {
       radioValue = value;
     });
   }
-}
-
-Widget _buildTrailing() {
-  return Column(
-    children: <Widget>[
-      CircleAvatar(
-        radius: 25,
-        backgroundColor: Colors.blue,
-      ),
-      RotatedBox(
-        quarterTurns: -1,
-        child: Text('Trailing'),
-      ),
-    ],
-  );
-}
-
-Widget _buildLeading() {
-  return Column(
-    children: <Widget>[
-      CircleAvatar(
-        radius: 25,
-        backgroundColor: Colors.blue,
-      ),
-      RotatedBox(
-        quarterTurns: -1,
-        child: Text('Leading'),
-      ),
-    ],
-  );
 }
