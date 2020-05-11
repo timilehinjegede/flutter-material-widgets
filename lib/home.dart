@@ -72,6 +72,22 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ],
                   ),
+                  Row(
+                    children: <Widget>[
+                      Text('Trailing'),
+                      Switch(
+                        value: trailingSwitchValue,
+                        onChanged: (value) {
+                          setState(
+                            () {
+                              trailingSwitchValue = value;
+                            },
+                          );
+                        },
+                      ),
+                    ],
+                  ),
+
                 ]),
           ),
         ],
