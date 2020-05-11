@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+// leading widget (Flutter Logo and a Text(Flutter)
+// Uses a SizedBox in between the two widgets to give vertical space to the widgets
 class LeadingWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

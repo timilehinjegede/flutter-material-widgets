@@ -10,38 +10,53 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int _selectedIndex = 0;
+  // selected index for the navigation rail
+  int _navigationRailSelectedIndex = 0;
+  // an instance of the group alignment enum created
   GroupStatus groupStatus;
+  // an instance of the label type enum created
   LabelType labelType;
+  // initial value of the leading switch
   bool leadingSwitchValue = false;
+  // initial value of the trailing switch
   bool trailingSwitchValue = false;
-
-  int indexSelected = 0;
+  // selected index of each choice chip
+  int chipIndexSelected = 0;
+  // value of each radio button
   int radioValue = 0;
 
-  List<String> radioLabels = ['Selected', 'None', 'All'];
+  // list of strings that contains the radio labels (Text)
+  List<String> radioLabels = ['None', 'Selected', 'All'];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Row(
         children: <Widget>[
+          // vertical padding so the navigation rail items stays out of the safe area
           Padding(
             padding: const EdgeInsets.symmetric(
               vertical: 25.0,
             ),
             child: NavigationRail(
+              // leading property
               leading: leadingSwitchValue ? LeadingWidget() : SizedBox.shrink(),
+              // trailing property
               trailing:
                   trailingSwitchValue ? TrailingWidget() : SizedBox.shrink(),
+              // group alignment property
               groupAlignment: getGroupValue(groupStatus),
-              selectedIndex: _selectedIndex,
+              // index of the selected navigation rail
+              selectedIndex: _navigationRailSelectedIndex,
+              // called when one of the destinations changes
               onDestinationSelected: (int index) {
                 setState(() {
-                  _selectedIndex = index;
+                  _navigationRailSelectedIndex = index;
                 });
               },
+              // set the current label of the navigation rail
               labelType: getLabelType(labelType),
+              // Navigation rail destinations
               destinations: [
                 NavigationRailDestination(
                   icon: Icon(
@@ -86,7 +101,9 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
           ),
+          // material design vertical divider to separate the navigation rail and other Widgets
           VerticalDivider(thickness: 1, width: 1),
+          // contents of the main screen goes here
           _buildBody(),
         ],
       ),
@@ -119,12 +136,16 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ],
             ),
+
+            // ===== VERTICAL SPACING =====
             SizedBox(
               height: 5,
             ),
+
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
+                // trailing entry goes here
                 Text('Trailing:'),
                 Switch(
                   value: trailingSwitchValue,
@@ -138,60 +159,74 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ],
             ),
+
+            // ===== VERTICAL SPACING =====
             SizedBox(
               height: 5,
             ),
+
+            // group alignment entry goes here
             Wrap(
               crossAxisAlignment: WrapCrossAlignment.center,
               children: <Widget>[
                 Text('Group Alignment:'),
                 ChoiceChip(
                   label: Text('-1.0'),
-                  selected: indexSelected == 0,
+                  selected: chipIndexSelected == 0,
                   onSelected: (value) {
                     setState(
                       () {
                         groupStatus = GroupStatus.negativeOne;
-                        indexSelected = value ? 0 : 0;
+                        chipIndexSelected = value ? 0 : 0;
                       },
                     );
                   },
                 ),
+
+                // ===== HORIZONTAL SPACING =====
                 SizedBox(
                   width: 10,
                 ),
+
                 ChoiceChip(
                   label: Text('0.0'),
-                  selected: indexSelected == 1,
+                  selected: chipIndexSelected == 1,
                   onSelected: (value) {
                     setState(
                       () {
                         groupStatus = GroupStatus.zero;
-                        indexSelected = value ? 1 : 0;
+                        chipIndexSelected = value ? 1 : 0;
                       },
                     );
                   },
                 ),
+
+                // ===== HORIZONTAL SPACING =====
                 SizedBox(
                   width: 10,
                 ),
+
                 ChoiceChip(
                   label: Text('1.0'),
-                  selected: indexSelected == 2,
+                  selected: chipIndexSelected == 2,
                   onSelected: (value) {
                     setState(
                       () {
                         groupStatus = GroupStatus.positiveOne;
-                        indexSelected = value ? 2 : 0;
+                        chipIndexSelected = value ? 2 : 0;
                       },
                     );
                   },
                 ),
               ],
             ),
+
+            // ===== VERTICAL SPACING =====
             SizedBox(
               height: 5,
             ),
+
+            // label type entry goes here
             Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -217,6 +252,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
+  // called anything a new radio button is selected
   void handleRadioValueChanged(int value) {
     setState(() {
       labelType = LabelType.values[value];
