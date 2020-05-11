@@ -39,19 +39,44 @@ class _HomeScreenState extends State<HomeScreen> {
             labelType: getLabelType(labelType),
             destinations: [
               NavigationRailDestination(
-                icon: Icon(Icons.favorite_border),
-                selectedIcon: Icon(Icons.favorite),
-                label: Text('First'),
+                icon: Icon(
+                  Icons.favorite_border,
+                ),
+                selectedIcon: Icon(
+                  Icons.favorite,
+                ),
+                label: Text(
+                  'First',
+                ),
               ),
               NavigationRailDestination(
-                icon: Icon(Icons.bookmark_border),
-                selectedIcon: Icon(Icons.book),
-                label: Text('Second'),
+                icon: Icon(
+                  Icons.bookmark_border,
+                ),
+                selectedIcon: Icon(
+                  Icons.book,
+                ),
+                label: Text(
+                  'Second',
+                ),
               ),
               NavigationRailDestination(
-                icon: Icon(Icons.star_border),
-                selectedIcon: Icon(Icons.star),
+                icon: Icon(
+                  Icons.star_border,
+                ),
+                selectedIcon: Icon(
+                  Icons.star,
+                ),
                 label: Text('Third'),
+              ),
+              NavigationRailDestination(
+                icon: Icon(
+                  Icons.location_on,
+                ),
+                selectedIcon: Icon(
+                  Icons.edit_location,
+                ),
+                label: Text('Forth'),
               ),
             ],
           ),
