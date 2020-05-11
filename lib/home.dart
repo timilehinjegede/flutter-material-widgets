@@ -60,6 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
           Expanded(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Row(
                   children: <Widget>[
@@ -166,7 +167,6 @@ class _HomeScreenState extends State<HomeScreen> {
     setState(() {
       radioValue = value;
     });
-    print(value);
   }
 }
 
