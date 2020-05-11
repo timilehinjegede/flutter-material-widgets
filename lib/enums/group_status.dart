@@ -15,6 +15,6 @@ double getGroupValue(GroupAlignmentStatus groupStatus) {
       return 1.0;
       break;
     default:
-      return -1;
+      return null;
   }
 }

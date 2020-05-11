@@ -46,7 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
               trailing:
                   _trailingSwitchValue ? TrailingWidget() : SizedBox.shrink(),
               // group alignment property
-              groupAlignment: getGroupValue(_groupAlignmentStatus),
+              groupAlignment: _chipIndexSelected == 0 ? -1.0 : getGroupValue(_groupAlignmentStatus),
               // index of the selected navigation rail
               selectedIndex: _navigationRailSelectedIndex,
               // called when one of the destinations changes
