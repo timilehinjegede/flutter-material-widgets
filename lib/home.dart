@@ -18,6 +18,10 @@ class _HomeScreenState extends State<HomeScreen> {
   bool trailingSwitchValue = false;
 
   int indexSelected = -1;
+  int radioValue = 0;
+
+  List<String> radioLabels = ['Selected', 'None', 'All'];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,82 +59,114 @@ class _HomeScreenState extends State<HomeScreen> {
           VerticalDivider(thickness: 1, width: 1),
           Expanded(
             child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Row(
-                    children: <Widget>[
-                      Text('Leading'),
-                      Switch(
-                        value: leadingSwitchValue,
-                        onChanged: (value) {
-                          setState(
-                            () {
-                              leadingSwitchValue = value;
-                            },
-                          );
-                        },
-                      ),
-                    ],
-                  ),
-                  Row(
-                    children: <Widget>[
-                      Text('Trailing'),
-                      Switch(
-                        value: trailingSwitchValue,
-                        onChanged: (value) {
-                          setState(
-                            () {
-                              trailingSwitchValue = value;
-                            },
-                          );
-                        },
-                      ),
-                    ],
-                  ),
-                  Wrap(
-                    crossAxisAlignment: WrapCrossAlignment.center,
-                    children: <Widget>[
-                      Text('Group Alignment'),
-                      ChoiceChip(
-                        label: Text('-1.0'),
-                        selected: indexSelected == 0,
-                        onSelected: (value) {
-                          setState(() {
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Row(
+                  children: <Widget>[
+                    Text('Leading'),
+                    Switch(
+                      value: leadingSwitchValue,
+                      onChanged: (value) {
+                        setState(
+                          () {
+                            leadingSwitchValue = value;
+                          },
+                        );
+                      },
+                    ),
+                  ],
+                ),
+                Row(
+                  children: <Widget>[
+                    Text('Trailing'),
+                    Switch(
+                      value: trailingSwitchValue,
+                      onChanged: (value) {
+                        setState(
+                          () {
+                            trailingSwitchValue = value;
+                          },
+                        );
+                      },
+                    ),
+                  ],
+                ),
+                Wrap(
+                  crossAxisAlignment: WrapCrossAlignment.center,
+                  children: <Widget>[
+                    Text('Group Alignment'),
+                    ChoiceChip(
+                      label: Text('-1.0'),
+                      selected: indexSelected == 0,
+                      onSelected: (value) {
+                        setState(
+                          () {
                             indexSelected = value ? 0 : -1;
-                          });
-                        },
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      ChoiceChip(
-                        label: Text('0.0'),
-                        selected: indexSelected == 1,
-                        onSelected: (value) {
-                          setState(() {
+                          },
+                        );
+                      },
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    ChoiceChip(
+                      label: Text('0.0'),
+                      selected: indexSelected == 1,
+                      onSelected: (value) {
+                        setState(
+                          () {
                             indexSelected = value ? 1 : -1;
-                          });
-                        },
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      ChoiceChip(
-                        label: Text('1.0'),
-                        selected: indexSelected == 2,
-                        onSelected: (value) {
-                          setState(() {
+                          },
+                        );
+                      },
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    ChoiceChip(
+                      label: Text('1.0'),
+                      selected: indexSelected == 2,
+                      onSelected: (value) {
+                        setState(
+                          () {
                             indexSelected = value ? 2 : -1;
-                          });
-                        },
+                          },
+                        );
+                      },
+                    ),
+                  ],
+                ),
+                Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text('Label Type'),
+                    for (int index = 0; index < 3; ++index)
+                      Row(
+                        children: <Widget>[
+                          Radio<int>(
+                            value: index,
+                            groupValue: radioValue,
+                            onChanged: handleRadioValueChanged,
+                          ),
+                          Text(radioLabels[index]),
+                        ],
                       ),
-                    ],
-                  )
-                ]),
+                  ],
+                )
+              ],
+            ),
           ),
         ],
       ),
     );
+  }
+
+  void handleRadioValueChanged(int value) {
+    setState(() {
+      radioValue = value;
+    });
+    print(value);
   }
 }
 
