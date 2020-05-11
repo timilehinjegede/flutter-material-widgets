@@ -1,16 +1,22 @@
 import 'package:flutter/material.dart';
 
-Widget buildTrailing() {
-  return Column(
-    children: <Widget>[
-      CircleAvatar(
-        radius: 25,
-        backgroundColor: Colors.blue,
-      ),
-      RotatedBox(
-        quarterTurns: -1,
-        child: Text('Trailing'),
-      ),
-    ],
-  );
+class TrailingWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        SizedBox(
+          height: 40,
+        ),
+        RotatedBox(
+          quarterTurns: -1,
+          child: Text('More'),
+        ),
+        IconButton(
+          onPressed: () {},
+          icon: Icon(Icons.menu),
+        ),
+      ],
+    );
+  }
 }

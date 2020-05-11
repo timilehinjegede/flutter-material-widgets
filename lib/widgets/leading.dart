@@ -6,7 +6,7 @@ class LeadingWidget extends StatelessWidget {
     return Column(
       children: <Widget>[
         FlutterLogo(
-          size: 60,
+          size: 55,
         ),
         SizedBox(
           height: 20,

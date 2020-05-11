@@ -31,9 +31,9 @@ class _HomeScreenState extends State<HomeScreen> {
               vertical: 25.0,
             ),
             child: NavigationRail(
-              leading: leadingSwitchValue ? buildLeading() : SizedBox.shrink(),
+              leading: leadingSwitchValue ? LeadingWidget() : SizedBox.shrink(),
               trailing:
-                  trailingSwitchValue ? buildTrailing() : SizedBox.shrink(),
+                  trailingSwitchValue ? TrailingWidget() : SizedBox.shrink(),
               groupAlignment: getGroupValue(groupStatus),
               selectedIndex: _selectedIndex,
               onDestinationSelected: (int index) {
