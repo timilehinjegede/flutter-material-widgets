@@ -1,6 +1,26 @@
 # flutter_material_widgets
 
-A new Flutter project.
+A Flutter project that gives a visual representation of how the new NavigationRail Widget in Flutter works.
+
+
+# 📸 Screenshots
+
+### The screenshots below are taken on a iOS simulator.
+
+| Form with empty fields                                           | Clicking the login button with empty fields                                         |
+| ------------------------------------------- | ----------------------------------------- |
+| <img src="screenshots/1.png" width="400"> | <img src="screenshots/2.png" width="400"> |
+
+
+|  Filling part of the form fields                                           | Filling part of the form fields                                         |
+| ------------------------------------------- | ----------------------------------------- |
+| <img src="screenshots/3.png" width="400"> | <img src="screenshots/4.png" width="400"> |
+
+
+| Validation successful                                 |
+| ------------------------------------------- | 
+| <img src="screenshots/5.png" width="400"> | 
+
 
 ## Getting Started
 
