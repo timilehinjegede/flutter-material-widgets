@@ -43,11 +43,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 label: Text('First'),
               ),
               NavigationRailDestination(
-                icon: SizedBox.shrink(),
-                label: RotatedBox(
-                  quarterTurns: -1,
-                  child: Text("text"),
-                ),
+                icon: Icon(Icons.bookmark_border),
+                selectedIcon: Icon(Icons.book),
+                label: Text('Second'),
               ),
               NavigationRailDestination(
                 icon: Icon(Icons.star_border),
@@ -63,9 +61,8 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-
   Widget _buildBody() {
-    return  Expanded(
+    return Expanded(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -77,7 +74,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 value: leadingSwitchValue,
                 onChanged: (value) {
                   setState(
-                        () {
+                    () {
                       leadingSwitchValue = value;
                     },
                   );
@@ -92,7 +89,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 value: trailingSwitchValue,
                 onChanged: (value) {
                   setState(
-                        () {
+                    () {
                       trailingSwitchValue = value;
                     },
                   );
@@ -109,7 +106,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 selected: indexSelected == 0,
                 onSelected: (value) {
                   setState(
-                        () {
+                    () {
                       indexSelected = value ? 0 : -1;
                     },
                   );
@@ -123,7 +120,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 selected: indexSelected == 1,
                 onSelected: (value) {
                   setState(
-                        () {
+                    () {
                       indexSelected = value ? 1 : -1;
                     },
                   );
@@ -137,7 +134,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 selected: indexSelected == 2,
                 onSelected: (value) {
                   setState(
-                        () {
+                    () {
                       indexSelected = value ? 2 : -1;
                     },
                   );
@@ -177,7 +174,16 @@ class _HomeScreenState extends State<HomeScreen> {
 
 Widget _buildTrailing() {
   return Column(
-    children: <Widget>[],
+    children: <Widget>[
+      CircleAvatar(
+        radius: 25,
+        backgroundColor: Colors.blue,
+      ),
+      RotatedBox(
+        quarterTurns: -1,
+        child: Text('Trailing'),
+      ),
+    ],
   );
 }
 
@@ -186,4 +192,3 @@ Widget _buildLeading() {
     children: <Widget>[],
   );
 }
-
