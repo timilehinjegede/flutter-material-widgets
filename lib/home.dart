@@ -8,12 +8,6 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
 
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-  }
-
   bool leadingSwitchValue = false;
   bool trailingSwitchValue = false;
 
