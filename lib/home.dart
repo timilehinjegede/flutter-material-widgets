@@ -13,20 +13,20 @@ class _HomeScreenState extends State<HomeScreen> {
   // selected index for the navigation rail
   int _navigationRailSelectedIndex = 0;
   // an instance of the group alignment enum created
-  GroupStatus groupStatus;
+  GroupAlignmentStatus _groupAlignmentStatus;
   // an instance of the label type enum created
-  LabelType labelType;
+  LabelType _labelType;
   // initial value of the leading switch
-  bool leadingSwitchValue = false;
+  bool _leadingSwitchValue = false;
   // initial value of the trailing switch
-  bool trailingSwitchValue = false;
+  bool _trailingSwitchValue = false;
   // selected index of each choice chip
-  int chipIndexSelected = 0;
+  int _chipIndexSelected = 0;
   // value of each radio button
-  int radioValue = 0;
+  int _radioValue = 0;
 
   // list of strings that contains the radio labels (Text)
-  List<String> radioLabels = ['None', 'Selected', 'All'];
+  List<String> _radioLabels = ['None', 'Selected', 'All'];
 
   @override
   Widget build(BuildContext context) {
@@ -40,12 +40,13 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             child: NavigationRail(
               // leading property
-              leading: leadingSwitchValue ? LeadingWidget() : SizedBox.shrink(),
+              leading:
+                  _leadingSwitchValue ? LeadingWidget() : SizedBox.shrink(),
               // trailing property
               trailing:
-                  trailingSwitchValue ? TrailingWidget() : SizedBox.shrink(),
+                  _trailingSwitchValue ? TrailingWidget() : SizedBox.shrink(),
               // group alignment property
-              groupAlignment: getGroupValue(groupStatus),
+              groupAlignment: getGroupValue(_groupAlignmentStatus),
               // index of the selected navigation rail
               selectedIndex: _navigationRailSelectedIndex,
               // called when one of the destinations changes
@@ -55,7 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 });
               },
               // set the current label of the navigation rail
-              labelType: getLabelType(labelType),
+              labelType: getLabelType(_labelType),
               // Navigation rail destinations
               destinations: [
                 NavigationRailDestination(
@@ -125,11 +126,11 @@ class _HomeScreenState extends State<HomeScreen> {
               children: <Widget>[
                 Text('Leading:'),
                 Switch(
-                  value: leadingSwitchValue,
+                  value: _leadingSwitchValue,
                   onChanged: (value) {
                     setState(
                       () {
-                        leadingSwitchValue = value;
+                        _leadingSwitchValue = value;
                       },
                     );
                   },
@@ -148,11 +149,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 // trailing entry goes here
                 Text('Trailing:'),
                 Switch(
-                  value: trailingSwitchValue,
+                  value: _trailingSwitchValue,
                   onChanged: (value) {
                     setState(
                       () {
-                        trailingSwitchValue = value;
+                        _trailingSwitchValue = value;
                       },
                     );
                   },
@@ -172,12 +173,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 Text('Group Alignment:'),
                 ChoiceChip(
                   label: Text('-1.0'),
-                  selected: chipIndexSelected == 0,
+                  selected: _chipIndexSelected == 0,
                   onSelected: (value) {
                     setState(
                       () {
-                        groupStatus = GroupStatus.negativeOne;
-                        chipIndexSelected = value ? 0 : 0;
+                        // set the group alignment status to zero
+                        _groupAlignmentStatus =
+                            GroupAlignmentStatus.negativeOne;
+                        _chipIndexSelected = value ? 0 : 0;
                       },
                     );
                   },
@@ -190,12 +193,13 @@ class _HomeScreenState extends State<HomeScreen> {
 
                 ChoiceChip(
                   label: Text('0.0'),
-                  selected: chipIndexSelected == 1,
+                  selected: _chipIndexSelected == 1,
                   onSelected: (value) {
                     setState(
                       () {
-                        groupStatus = GroupStatus.zero;
-                        chipIndexSelected = value ? 1 : 0;
+                        // set the group alignment status to zero
+                        _groupAlignmentStatus = GroupAlignmentStatus.zero;
+                        _chipIndexSelected = value ? 1 : 0;
                       },
                     );
                   },
@@ -208,12 +212,14 @@ class _HomeScreenState extends State<HomeScreen> {
 
                 ChoiceChip(
                   label: Text('1.0'),
-                  selected: chipIndexSelected == 2,
+                  selected: _chipIndexSelected == 2,
                   onSelected: (value) {
                     setState(
                       () {
-                        groupStatus = GroupStatus.positiveOne;
-                        chipIndexSelected = value ? 2 : 0;
+                        // set the group alignment status to zero
+                        _groupAlignmentStatus =
+                            GroupAlignmentStatus.positiveOne;
+                        _chipIndexSelected = value ? 2 : 0;
                       },
                     );
                   },
@@ -238,10 +244,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: <Widget>[
                       Radio<int>(
                         value: index,
-                        groupValue: radioValue,
+                        groupValue: _radioValue,
                         onChanged: handleRadioValueChanged,
                       ),
-                      Text(radioLabels[index]),
+                      Text(_radioLabels[index]),
                     ],
                   ),
               ],
@@ -255,8 +261,8 @@ class _HomeScreenState extends State<HomeScreen> {
   // called anything a new radio button is selected
   void handleRadioValueChanged(int value) {
     setState(() {
-      labelType = LabelType.values[value];
-      radioValue = value;
+      _labelType = LabelType.values[value];
+      _radioValue = value;
     });
   }
 }
