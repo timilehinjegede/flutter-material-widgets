@@ -25,7 +25,7 @@ double getGroupValue(GroupStatus groupStatus) {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
-
+  GroupStatus groupStatus;
   bool leadingSwitchValue = false;
   bool trailingSwitchValue = false;
 
@@ -43,7 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
             leading: leadingSwitchValue ? _buildLeading() : SizedBox.shrink(),
             trailing:
                 trailingSwitchValue ? _buildTrailing() : SizedBox.shrink(),
-            groupAlignment: -1.0,
+            groupAlignment: getGroupValue(groupStatus),
             selectedIndex: _selectedIndex,
             onDestinationSelected: (int index) {
               setState(() {
@@ -122,6 +122,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 onSelected: (value) {
                   setState(
                     () {
+                      groupStatus = GroupStatus.negativeOne;
                       indexSelected = value ? 0 : 0;
                     },
                   );
@@ -136,6 +137,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 onSelected: (value) {
                   setState(
                     () {
+                      groupStatus = GroupStatus.zero;
                       indexSelected = value ? 1 : 0;
                     },
                   );
@@ -150,6 +152,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 onSelected: (value) {
                   setState(
                     () {
+                      groupStatus = GroupStatus.positiveOne;
                       indexSelected = value ? 2 : 0;
                     },
                   );
