@@ -5,11 +5,15 @@ A Flutter project that gives a visual representation of how the new NavigationRa
 
 # 📸 Screenshots
 
-### The screenshots below are taken on a iOS simulator.
+### Navigation Rail Widget
 
 |  ScreenShot 1                                         |  ScreenShot 2                                          |
 | ------------------------------------------- | ----------------------------------------- |
 | <img src="screenshots/0.png" width="400"> | <img src="screenshots/1.png" width="400"> |
+
+### Time Picker Widget
+
+### Date Picker Widget
 
 
 ## Getting Started
