@@ -8,9 +8,9 @@ If you appreciate the content 📖, support the project by giving a ⭐ for visi
 
 ## Examples
 
-- [Date Picker](#date picker)
-- [Time Picker](#time picker)
-- [Navigation Rail](#navigation rail)
+- [Date Picker](#datepicker)
+- [Time Picker](#timepicker)
+- [Navigation Rail](#navigationrail)
 
 
 ## Date Picker
