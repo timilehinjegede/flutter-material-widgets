@@ -3,28 +3,18 @@
 A Flutter project that gives a visual representation of how the new NavigationRail Widget in Flutter works.
 
 
-# 📸 Screenshots
-
-### Navigation Rail Widget
-
-|  ScreenShot 1                                         |  ScreenShot 2                                          |
-| ------------------------------------------- | ----------------------------------------- |
-| <img src="screenshots/0.png" width="400"> | <img src="screenshots/1.png" width="400"> |
-
-### Time Picker Widget
-
-### Date Picker Widget
+If you appreciate the content 📖, support the project by giving a ⭐ for visibility.
 
 
-## Getting Started
+## Table of Contents
 
-This project is a starting point for a Flutter application.
+- [Date Picker](#datepicker)
+- [Time Picker](#timepicker)
+- [Navigation Rail](#navigationrail)
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Date Picker
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Time Picker
+
+## Navigation Rail
