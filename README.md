@@ -6,11 +6,11 @@ A Flutter project that gives a visual representation of how the new NavigationRa
 If you appreciate the content 📖, support the project by giving a ⭐ for visibility.
 
 
-## Table of Contents
+## Examples
 
-- [Date Picker](#datepicker)
-- [Time Picker](#timepicker)
-- [Navigation Rail](#navigationrail)
+- [Date Picker](#date picker)
+- [Time Picker](#time picker)
+- [Navigation Rail](#navigation rail)
 
 
 ## Date Picker
