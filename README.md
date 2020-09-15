@@ -8,10 +8,13 @@ If you appreciate the content 📖, support the project by giving a ⭐ for visi
 
 ## Table of Contents
 
-- [Examples](#examples)
-- [Screenshots](#screenshots)
+- [Date Picker](#datepicker)
+- [Time Picker](#timepicker)
+- [Navigation Rail](#navigationrail)
 
 
-## Examples
+## Date Picker
 
-# 📸 Screenshots
+## Time Picker
+
+## Navigation Rail
